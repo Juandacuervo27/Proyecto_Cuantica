@@ -1,0 +1,201 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física Cuántica Moderna</title>
+    <style>
+        /* ------------------ ESTILO GENERAL ------------------ */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: radial-gradient(circle at center, #050816 0%, #000000 100%);
+            color: #00f2ff;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            display: flex; /* Habilita flexbox en el body */
+            flex-direction: column; /* Organiza los elementos en columna */
+             background-image: url('https://www.mundoestudiante.com/wp-content/uploads/2022/10/que-es-la-mecanica-cuantica.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+        }
+
+        /* ------------------ HEADER CON FLEX ------------------ */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 2px solid #00f2ff;
+    box-shadow: 0 0 20px #00f2ff;
+    text-align: center;
+    position: relative; /* Necesario para posicionar el botón si quisieras moverlo */
+}
+
+/* Estilos para el botón de regresar */
+.btn-regresar {
+    background: transparent;
+    color: #00f2ff;
+    border: 1px solid #00f2ff;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem; /* Espacio antes de los títulos */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 5px #00f2ff;
+}
+
+.btn-regresar:hover {
+    background: #00f2ff;
+    color: #000; /* Texto oscuro al pasar el mouse */
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow:
+        0 0 5px #00f2ff,
+        0 0 10px #00f2ff,
+        0 0 20px #00f2ff;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    text-shadow:
+        0 0 5px #00f2ff,
+        0 0 10px #00f2ff,
+        0 0 20px #00f2ff;
+}
+
+        /* ------------------ MAIN CON GRID ------------------ */
+
+        main {
+            flex-grow: 1; /* Permite que main ocupe todo el espacio disponible */
+            display: grid; /* Activa CSS Grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+            gap: 40px; /* Espacio entre las celdas del grid */
+            padding: 3rem;
+            max-width: 1600px; /* Ancho máximo para el contenido principal */
+            margin: 0 auto; /* Centra el contenido principal */
+            
+        }
+
+        /* ------------------ SECCIONES ------------------ */
+
+        section {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de línea de escaneo */
+        section::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0, 242, 255, 0.05), transparent);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        section:hover::before {
+            top: 100%;
+            transition: 1.5s;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            background: rgba(0, 242, 255, 0.08);
+        }
+
+        /* ------------------ ESPACIO PARA IMÁGENES (CON FLEX) ------------------ */
+        .image-gallery {
+            display: flex; /* Activa flexbox */
+            flex-wrap: wrap; /* Permite que las imágenes salten de línea */
+            gap: 20px; /* Espacio entre las imágenes */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            padding: 2rem 0;
+        }
+
+        .image-placeholder {
+            flex: 1 1 300px; /* Permite que cada imagen ocupe al menos 300px y crezca/encoga */
+            min-height: 200px;
+            background: rgba(0, 242, 255, 0.03);
+            border: 1px dashed #00f2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            color: rgba(0, 242, 255, 0.5);
+            border-radius: 8px;
+            overflow: hidden; /* Evita que la imagen se salga del borde redondeado */
+            max-height: 400px;
+        }
+        .image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Mantiene la estética de los bordes del contenedor */
+    object-fit: cover;  /* Asegura que la imagen llene el espacio de forma armoniosa */
+    
+    /* Efecto opcional: un ligero resplandor para que coincida con tu diseño */
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.5));
+}
+
+        /* ------------------ FOOTER STICKY CON FLEX ------------------ */
+
+        footer {
+            margin-top: auto; /* Empuja el footer hacia la parte inferior */
+            display: flex; /* Activa flexbox */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            padding: 1.5rem;
+            border-top: 2px solid #00f2ff;
+            box-shadow: 0 0 20px #00f2ff;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+    <header>
+    <h3>FÍSICA CUÁNTICA</h3>
+    <h1>Acercamiento a la Cuántica</h1>
+    <br>
+    <button class="btn-regresar" onclick="window.location.href='../index.html'">
+    &larr; Volver
+</button>
+</header>
+
+    <main>
+        <section>
+            <h1>Conclusión</h1>
+            <p>La física cuántica no es solo una rama teórica aislada, sino la ciencia que explica el comportamiento más profundo de la realidad, operando en los niveles donde se forjan las leyes que rigen todo lo que vemos. Su estudio nos revela que el tejido mismo del universo es mucho más complejo y fascinante de lo que percibimos a simple vista. Aunque puede parecer extraña o confusa al principio, debido a que desafía nuestras experiencias sensoriales más básicas, su dominio es fundamental para entender el mundo moderno y la tecnología actual, ya que sin ella no tendríamos acceso a las herramientas digitales que definen nuestra civilización.</p>
+            <p>Este documento se ha diseñado meticulosamente para que sirva como una introducción básica para personas que no tienen conocimientos previos en cuántica, desglosando conceptos técnicos en ideas accesibles y cercanas. Al evitar tecnicismos innecesarios sin sacrificar el rigor, este material puede usarse como base para una página web educativa sobre el tema, proporcionando una estructura clara y atractiva que permite a cualquier usuario curioso dar sus primeros pasos en la comprensión de los pilares del universo subatómico.</p>
+        </section>
+        
+        </main>
+
+    <footer>
+        <p>© 2026 Acercamiento a la Cuántica. Todos los derechos reservados. 
+            Realizado por: Juan David Cuervo - David Pinzon - Samuel Espinoza - Julian Camilo - Juliana - Gabriel Monroy
+        </p>
+    </footer>
+
+</body></html>

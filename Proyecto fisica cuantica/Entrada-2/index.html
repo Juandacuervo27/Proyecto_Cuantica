@@ -1,0 +1,213 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física Cuántica Moderna</title>
+    <style>
+        /* ------------------ ESTILO GENERAL ------------------ */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: radial-gradient(circle at center, #050816 0%, #000000 100%);
+            color: #00f2ff;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            display: flex; /* Habilita flexbox en el body */
+            flex-direction: column; /* Organiza los elementos en columna */
+             background-image: url('https://filosofiaenlared.com/wp-content/uploads/2025/10/immanuel_kant-epistemologia-mecanica_cuantica-ciencia-fisica_cuantica.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+        }
+
+        /* ------------------ HEADER CON FLEX ------------------ */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 2px solid #00f2ff;
+    box-shadow: 0 0 20px #00f2ff;
+    text-align: center;
+    position: relative; /* Necesario para posicionar el botón si quisieras moverlo */
+}
+
+/* Estilos para el botón de regresar */
+.btn-regresar {
+    background: transparent;
+    color: #00f2ff;
+    border: 1px solid #00f2ff;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem; /* Espacio antes de los títulos */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 5px #00f2ff;
+}
+
+.btn-regresar:hover {
+    background: #00f2ff;
+    color: #000; /* Texto oscuro al pasar el mouse */
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-shadow:
+        0 0 5px #00f2ff,
+        0 0 10px #00f2ff,
+        0 0 20px #00f2ff;
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    text-shadow:
+        0 0 5px #00f2ff,
+        0 0 10px #00f2ff,
+        0 0 20px #00f2ff;
+}
+
+        /* ------------------ MAIN CON GRID ------------------ */
+
+        main {
+            flex-grow: 1; /* Permite que main ocupe todo el espacio disponible */
+            display: grid; /* Activa CSS Grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+            gap: 40px; /* Espacio entre las celdas del grid */
+            padding: 3rem;
+            max-width: 1600px; /* Ancho máximo para el contenido principal */
+            margin: 0 auto; /* Centra el contenido principal */
+            
+        }
+
+        /* ------------------ SECCIONES ------------------ */
+
+        section {
+            background: var(--glass-bg);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de línea de escaneo */
+        section::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0, 242, 255, 0.05), transparent);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        section:hover::before {
+            top: 100%;
+            transition: 1.5s;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            background: rgba(0, 242, 255, 0.08);
+        }
+
+        /* ------------------ ESPACIO PARA IMÁGENES (CON FLEX) ------------------ */
+        .image-gallery {
+            display: flex; /* Activa flexbox */
+            flex-wrap: wrap; /* Permite que las imágenes salten de línea */
+            gap: 20px; /* Espacio entre las imágenes */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            padding: 2rem 0;
+        }
+
+        .image-placeholder {
+            flex: 1 1 300px; /* Permite que cada imagen ocupe al menos 300px y crezca/encoga */
+            min-height: 200px;
+            background: rgba(0, 242, 255, 0.03);
+            border: 1px dashed #00f2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            color: rgba(0, 242, 255, 0.5);
+            border-radius: 8px;
+            overflow: hidden; /* Evita que la imagen se salga del borde redondeado */
+            max-height: 400px;
+        }
+        .image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Mantiene la estética de los bordes del contenedor */
+    object-fit: cover;  /* Asegura que la imagen llene el espacio de forma armoniosa */
+    
+    /* Efecto opcional: un ligero resplandor para que coincida con tu diseño */
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.5));
+}
+
+        /* ------------------ FOOTER STICKY CON FLEX ------------------ */
+
+        footer {
+            margin-top: auto; /* Empuja el footer hacia la parte inferior */
+            display: flex; /* Activa flexbox */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            padding: 1.5rem;
+            border-top: 2px solid #00f2ff;
+            box-shadow: 0 0 20px #00f2ff;
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+    <header>
+        <h3>FÍSICA CUÁNTICA</h3>
+        <h1>Acercamiento a la Cuántica</h1>
+        <br>
+        <button class="btn-regresar" onclick="window.location.href='../index.html'">
+    &larr; Volver
+</button>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿Por qué es importante la física cuántica?</h2>
+            <p>Efectivamente, la física cuántica no es solo un conjunto de teorías abstractas confinadas a laboratorios de alta complejidad; es, en realidad, el motor invisible que impulsa la era digital. Aunque sus leyes —como la superposición o el entrelazamiento— desafíen nuestra intuición cotidiana, son los pilares fundamentales que permiten manipular la materia a una escala microscópica para crear soluciones prácticas.</p>
+            <p>A continuación, profundizamos en cómo esta ciencia se manifiesta en los ejemplos mencionados:</p>
+            <h4>La infraestructura de la información</h4>
+            <ul>
+                <li><b>Chips electrónicos y Computadores:</b> El funcionamiento de los transistores, que son los "cerebros" de cualquier procesador, depende enteramente de la mecánica cuántica. Sin el control del flujo de electrones a través de materiales semiconductores, el hardware moderno sería físicamente imposible.</li>
+                <li><b>Teléfonos móviles:</b> Estos dispositivos condensan billones de transistores en espacios minúsculos, utilizando efectos cuánticos para procesar datos y almacenar información en memorias tipo flash.</li>
+                <li><b>Internet:</b> La fibra óptica que transporta la red global depende de la emisión controlada de luz, un fenómeno que solo entendemos gracias al estudio de los fotones.</li>
+            </ul>
+            <h4>Energía y Medicina</h4>
+            <ul>
+                <li><b>Paneles solares:</b> El efecto fotoeléctrico, por el cual la luz se convierte directamente en electricidad, es un proceso puramente cuántico. Los electrones saltan a niveles de energía superiores al ser golpeados por partículas de luz, generando corriente.</li>
+                <li><b>Resonancias magnéticas (RMN):</b> En el ámbito de la salud, esta tecnología utiliza el "espín" de los núcleos atómicos bajo campos magnéticos para obtener imágenes detalladas del interior del cuerpo humano sin necesidad de cirugía.</li>
+                <li><b>Láseres:</b> Utilizados desde lectores de códigos de barras hasta cirugías oculares, los láseres funcionan mediante la emisión estimulada de radiación, un concepto nacido de las ecuaciones de la física cuántica.</li>
+            </ul>
+        </section>
+        
+        </main>
+
+    <footer>
+        <p>© 2026 Acercamiento a la Cuántica. Todos los derechos reservados. 
+            Realizado por: Juan David Cuervo - David Pinzon - Samuel Espinoza - Julian Camilo - Juliana - Gabriel Monroy
+        </p>
+    </footer>
+
+</body></html>
